@@ -13,9 +13,6 @@ export class IndexComponent implements OnInit {
 
   campaigns = [];
   baseUrl = 'https://mydana.herokuapp.com/api/';
-  percent;
-  days;
-  mystyle;
   data;
   token;
   logged : Boolean;

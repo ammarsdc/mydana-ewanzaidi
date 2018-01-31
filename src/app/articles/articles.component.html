@@ -1,0 +1,174 @@
+<div id="wrapper">
+		<header id="header" class="site-header">
+			<div class="container" style="width: 90%;">
+				<div class="site-brand">
+					<a href="#"><img src="../assets/images/logo-light.png" alt=""></a>
+				</div><!-- .site-brand -->
+				<div class="right-header">					
+					<nav class="main-menu">
+						<button class="c-hamburger c-hamburger--htx"><span></span></button>
+						<ul>
+							<li>
+								<a href="#">PROGRAM<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<ul class="sub-menu">
+									<li><a href="#">KESIHATAN</a></li>
+									<li><a href="#">KASIH</a></li>
+									<li><a href="#">AMAL</a></li>
+									<li><a href="#">KOMUNITI</a></li>
+									<li><a href="#">ILMU</a></li>
+								</ul>
+							</li>
+							<li><a href="#">MAKLUMAT</a></li>
+						</ul>
+					</nav>
+					<div class="login login-button">
+						<a href="https://demo.themegoals.com/html/ideabox/login.html" class="btn-primary">Login</a>
+					</div><!-- .login -->
+				</div><!--. right-header -->
+			</div><!-- .container -->
+		</header><!-- .site-header -->
+		
+
+		<main id="main" class="site-main">
+		<section class="top-site">
+
+		</section>
+				<div class="video">
+					<div class="video-wrapper">
+						<div>
+							<div class="container2">
+								<h1> Our mission is to empower people to unite around ideas that matter to them and together make those ideas come to life.
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div><!-- .video -->
+				<section class="statics section">
+					<div class="container">
+					<div class="statics-content">
+						<div class="row">
+							<div class="col-md-4 col-xs-6">
+								<div class="statics-item" style="background:none !important">
+									<h3>Feature 1</h3>
+									<div class="statics-item-desc"><p>Total raised across all projects, from programs to design.</p></div>
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-6">
+								<div class="statics-item" style="background:none !important">
+									<h3>Feature 2</h3>
+									<div class="statics-item-desc"><p>Total raised across all projects, from programs to design.</p></div>
+								</div>
+							</div>
+							<div class="col-md-4 col-xs-6">
+								<div class="statics-item" style="background:none !important">
+									<h3>Feature 3</h3>
+									<div class="statics-item-desc"><p>Total raised across all projects, from programs to design.</p></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</section>
+				<section class="team section" style="background:black">
+					<div class="container">
+						<h2 class="title" style="color:white" >Sumbangan Setakat Ini</h2>
+						<div class="statics-content">
+							<div class="row">
+								<div class="col-md-4 col-xs-6">
+									<div class="statics-item" style="background:none !important;color:white">
+										<h3 style="color: white;font-size: 70px;">32 %</h3>
+										<div class="statics-item-desc">
+											<p>Total raised across all projects, from programs to design.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-xs-6">
+									<div class="statics-item" style="background:none !important;color:white">
+										<h3 style="color: white;font-size: 70px;">15 %</h3>
+										<div class="statics-item-desc">
+											<p>Total raised across all projects, from programs to design.</p>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-xs-6">
+									<div class="statics-item" style="background:none !important;color:white">
+										<h3 style="color: white;font-size: 70px;">50%</h3>
+										<div class="statics-item-desc">
+											<p>Total raised across all projects, from programs to design.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="team section" style="background:white">
+					<div class="container">
+						<h2 class="title" style="color:black">Berita Yayasan</h2>
+						<div class="statics-content">
+							<div class="row mb50">
+								<div  *ngFor="let a of articles; let i = index" class="col-md-4 col-xs-6">
+									<div *ngIf="i < 3" class="statics-item">
+										<div class="statics-item-desc">
+											<p style="margin-bottom:22px;">{{a.article_date | date: 'dd MMMM yyyy'}}</p>
+											<p style="margin-bottom:22px;font-size:30px">{{a.article_title}}</p>
+											<p style="margin-bottom:42px;">{{a.description}}</p>
+											<a (click)="readMore(a.article_id)">Read More ></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="button" style="text-align: center">
+									<button class="btn-primary">Button</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- .team -->
+		</main><!-- .site-main -->
+
+		<footer id="footer" class="bg-pink subscribe">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 col-sm-5 text-right text-left-xs wow fadeInUp" data-wow-delay=".1s">
+						<h2 class="fs50">
+							BERSAMA MEMBANTU MEREKA YANG MEMERLUKAN
+						</h2>
+					</div>
+					<div style="margin-top:30px" class="col-md-2 col-sm-2 col-xs-2 hidden-sm hidden-xs text-center wow fadeInUp" data-wow-delay=".1s">
+						<i style="color:black" class="icon display-block fa fa-heartbeat fa-5x">
+							
+						</i>
+					</div>
+					<div class="col-md-5 col-sm-5 wow fadeInUp" data-wow-delay=".1s">
+						<p class="lead">Sebarang pertanyaan boleh dikemukakan kepada Sekretariat kami melalui saluran dibawah:
+							<br>
+						</p>
+						<h4 class="mb8">
+							tel: 03 2858 7637
+						</h4>
+						<h4 class="mb8">
+							email: admin@myprihatin.org.my
+						</h4>
+						<br>
+						<h4 class="mb0">
+							<a style="color:white" href="http://fb.com/yayasanmyprihatin">
+								<i class="fa fa-facebook-official">
+								</i>
+								YayasanMyPrihatin
+							</a>
+						</h4>
+						<h4 class="mb0">
+							<a style="color:white" href="http://instagram.com/yayasanmyprihatin">
+								<i class="fa fa-instagram">
+								</i>
+								@yayasanmyprihatin
+							</a>
+						</h4>
+					</div>
+				</div>
+			</div>
+		</footer><!-- site-footer -->
+	</div><!-- #wrapper -->
