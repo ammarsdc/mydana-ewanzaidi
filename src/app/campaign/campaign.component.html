@@ -41,7 +41,7 @@
 										<div class="owl-wrapper" style="width: 3330px; left: 0px; display: block;">
 											<div class="owl-item" style="width: 555px;">
 												<div class="item">
-													<img src="../../assets/images/campaign-recent-01.jpg" alt="" style="height:375px">
+													<img src="{{campaign.campaign_image}}" alt="" style="height:375px">
 												</div>
 											</div>
 										</div>
@@ -67,15 +67,15 @@
 								</div>
 							</div>
 							<div class="campaign-box">
-								<h5>Kempen</h5>
-								<h3>Kempen My Heart IJN</h3>
-								<div class="campaign-description"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tempor, ipsum ut mattis commodo, eros justo feugiat ante, sed tristique erat urna et nibh. Donec nec rhoncus mi, non laoreet tortor. Proin ullamcorper ipsum interdum tellus scelerisque, a ultricies urna vehicula. Mauris faucibus metus quis commodo pharetra.</p></div>
+								<h5>{{campaign.category}}</h5>
+								<h3>{{campaign.campaign_name}}</h3>
+								<div class="campaign-description"><p>{{campaign.short_desc}}</p></div>
 								<div class="process">
-									<div class="raised"><span style="width: 255.297px;"></span></div>
+									<div class="raised"><span [ngStyle]="campaign.mystyle"></span></div>
 									<div class="process-info">
-										<div class="process-funded"><span>RM 4,890</span>terkumpul setakat ini</div><br>
-										<div class="process-funded"><span>80%</span>tepati sasaran</div><br>
-										<div class="process-funded"><span>5</span>hari lagi</div><br>
+										<div class="process-funded"><span>RM {{campaign.fund_amount}}</span> terkumpul setakat ini</div><br>
+										<div class="process-funded"><span>{{campaign.percent}}%</span> tepati sasaran</div><br>
+										<div class="process-funded"><span>{{campaign.days}}</span> hari lagi</div><br>
 									</div>
 								</div>
 								<div class="button">
@@ -94,57 +94,44 @@
 						<div class="col-md-8">
 							<div class="campaign-tabs">
 								<ul class="tabs-controls">
-									<li class="active" data-tab="campaign"><a href="https://demo.themegoals.com/html/ideabox/campaign_detail.html?s=1#">Overview</a></li>
-									<li data-tab="comment" class=""><a href="https://demo.themegoals.com/html/ideabox/campaign_detail.html?s=1#">Komen</a></li>
-									<li data-tab="updates" class=""><a href="https://demo.themegoals.com/html/ideabox/campaign_detail.html?s=1#">Terkini</a></li>
+									<li [ngClass]="{active: oview}" data-tab="campaign"><a (click)="overview()">Overview</a></li>
+									<li data-tab="comment" [ngClass]="{active: cment}"><a (click)="comment()">Komen</a></li>
+									<li data-tab="updates" [ngClass]="{active: rcent}"><a (click)="terkini()">Terkini</a></li>
 								</ul>
 								<div class="campaign-content">
-									<div id="campaign" class="tabs active">
-										<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-										<img src="./ideabox_files/campaign-tabs.jpg" alt="">
-										<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents. I should be incapable of drawing a single stroke at the present moment.</p>
-										<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved</p>
+									<div *ngIf="oview" id="campaign" class="tabs" [ngClass]="{active: oview}">
+										<p>{{campaign.description}}</p>
 									</div>
-									<div id="updates" class="tabs">
-										<ul>
+									<div *ngIf="rcent" id="updates" class="tabs" [ngClass]="{active: rcent}">
+										<ul *ngFor="let c of campaign.campaign_news">
 											<li>
-												<p class="date">30-06-2017</p>
-												<div class="desc"><p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken. Landjaeger meatloaf pork belly spare ribs chuck.</p></div>
-											</li>
-											<li>
-												<p class="date">31-05-2018</p>
-												<div class="desc"><p>Corned beef leberkas fatback porchetta, strip steak salami turkey short loin flank ham hock landjaeger. Leberkas pork belly kevin shoulder filet mignon. Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken. Landjaeger meatloaf pork belly spare ribs chuck.</p></div>
-											</li>
-											<li>
-												<p class="date">31-05-2018</p>
-												<div class="desc"><p>Corned beef leberkas fatback porchetta, strip steak salami turkey short loin flank ham hock landjaeger. Leberkas pork belly kevin shoulder filet mignon. Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken. Landjaeger meatloaf pork belly spare ribs chuck.</p></div>
-											</li>
-											<li>
-												<p class="date">31-05-2018</p>
-												<div class="desc"><p>Sed cursus hendrerit odio, at aliquet leo hendrerit a. Nulla ultricies sagittis dolor, quis maximus magna consectetur eu. Cras pharetra aliquam fringilla. Integer placerat sapien dapibus varius luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in aliquam urna, ultrices lobortis lacus. Praesent mi enim, congue semper volutpat ut, bibendum tempor arcu.</p></div>
+												<p class="date">{{c.created_at.date|date:'dd MMM yyyy'}}</p>
+                        <div class="desc"><p>{{c.desc}}</p></div>
+                        <br>
 											</li>
 										</ul>
 									</div>
-									<div id="comment" class="tabs comment-area">
+									<div *ngIf="cment" id="comment" class="tabs comment-area" [ngClass]="{active: cment}">
 										<ol class="comments-list">
 											<li class="comment clearfix"> 
-												<div class="comment-body">
-													<div class="comment-avatar"><img src="./ideabox_files/comment.jpg" alt="" style="border-radius:50%"></div>
+												<div *ngFor="let c of campaign.campaign_comments"class="comment-body">
+													<div class="comment-avatar"><img src="{{c.user.image}}" alt="" style="border-radius:50%;height:70px; width:70px"></div>
 													<div class="comment-info">
 														<header class="comment-meta"></header>
-														<cite class="comment-author">Jordan B. Goodale </cite><span class="comment-date"> 2 days ago</span>
-														<div class="comment-content"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Equidem e Cn. Sequitur disserendi ratio cognitioque naturae; Nunc vides, quid faciat. Duo Reges: constructio interrete. Memini vero, inquam; Quis Aristidem non mortuum diligit?</p></div>
-													</div>
+														<cite class="comment-author">{{c.user.name}} </cite><span class="comment-date"> {{c.RelativeDate}}</span>
+														<div class="comment-content"><p>{{c.desc}}</p></div>
+                          </div>
+                          <br>
 												</div>
 											</li>
 										</ol>
 										<div id="respond" class="comment-respond">
 											<h3 id="reply-title" class="comment-reply-title">Leave A Comment?</h3>
-											<form action="https://demo.themegoals.com/html/ideabox/campaign_detail.html?s=1" id="commentForm">
+											<form #commentForm="ngForm" id="commentForm">
 												<div class="field-textarea">
-								  					<textarea rows="8" placeholder="Your Comment"></textarea>
+								  					<textarea rows="8" placeholder="Your Comment" name="newcomment" ngModel></textarea>
 								  				</div>
-											  	<button type="submit" value="Send Messager" class="btn-primary">Post Comment</button>
+											  	<button type="submit" (click)="newComment(commentForm)" class="btn-primary">Post Comment</button>
 											</form>
 										</div>
 									</div>

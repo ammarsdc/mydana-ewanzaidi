@@ -11,6 +11,8 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
 import { CampaignComponent } from './campaign/campaign.component';
 
+import { MomentModule } from 'angular2-moment';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { CampaignComponent } from './campaign/campaign.component';
     HttpClientModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
