@@ -1,0 +1,221 @@
+<div id="wrapper">
+  <header id="header" class="site-header">
+    <div class="container" style="width: 90%;">
+      <div class="site-brand">
+        <a href="#"><img src="../../assets/images/logo-light.png" alt=""></a>
+      </div><!-- .site-brand -->
+      <div class="right-header">					
+        <nav class="main-menu">
+          <button class="c-hamburger c-hamburger--htx"><span></span></button>
+          <ul>
+            <li>
+              <a href="#">PROGRAM<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <ul class="sub-menu">
+                <li><a href="#">KESIHATAN</a></li>
+                <li><a href="#">KASIH</a></li>
+                <li><a href="#">AMAL</a></li>
+                <li><a href="#">KOMUNITI</a></li>
+                <li><a href="#">ILMU</a></li>
+              </ul>
+            </li>
+            <li><a href="#">MAKLUMAT</a></li>
+          </ul>
+        </nav>
+        <div class="login login-button">
+          <a (click)="login()" class="btn-primary">Login</a>
+        </div><!-- .login -->
+      </div><!--. right-header -->
+    </div><!-- .container -->
+  </header><!-- .site-header -->
+
+  <main id="main" class="site-main">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators indicators">
+        <li data-target="#carousel-example-generic " class="active" data-slide-to="0"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner h100" role="listbox">
+        <div class="item active">
+          <img src="../../assets/images/header.png" alt="..." class="img-responsive">
+          <div class="container">
+            <div class="centered5">Bersama Membantu Mereka Yang Memerlukan</div>
+            <div class="centered6">Pasangan kembar Muhammad Alif Iqbal dan Muhammad Alif Aziz diantara 425 penerima yang telah berjaya dibantu</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="../../assets/images/header.png" alt="..." class="img-responsive">
+          <div class="container">
+            <div class="centered5">Bersama Membantu Mereka Yang Memerlukan</div>
+            <div class="centered6">Pasangan kembar Muhammad Alif Iqbal dan Muhammad Alif Aziz diantara 425 penerima yang telah berjaya dibantu</div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="../../assets/images/header.png" alt="..." class="img-responsive">
+          <div class="container">
+            <div class="centered5">Bersama Membantu Mereka Yang Memerlukan</div>
+            <div class="centered6">Pasangan kembar Muhammad Alif Iqbal dan Muhammad Alif Aziz diantara 425 penerima yang telah berjaya dibantu</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="fa fa-arrow-left fa-4x arrowl" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="fa fa-arrow-right fa-4x arrowr" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <div class="mt100">
+      <div class="popular campaign">
+        <div class="container mw md-mw2">
+          <h2 class="title2 wow fadeInUp" data-wow-delay=".2s">Kempen Terkini</h2>
+          <div class="campaign-content">
+            <div class="row">
+              <div *ngFor="let c of campaigns" class="col-md-4">
+                <div class="campaign-item wow fadeInUp" data-wow-delay=".1s">
+                  <a class="overlay" href="https://demo.themegoals.com/html/ideabox/campaign_detail.html">
+                    <img src="{{c.campaign_image}}" alt="">
+                    <span class="ion-ios-search-strong"></span>
+                  </a>
+                  <div class="campaign-box">
+                    <a href="https://demo.themegoals.com/html/ideabox/#" class="category">{{c.category}}</a>
+                    <h3><a href="https://demo.themegoals.com/html/ideabox/campaign_detail.html">{{c.campaign_name}}</a></h3>
+                    <div class="campaign-description">{{c.description}}</div>
+                    <div class="process">
+                      <div class="raised"><span [ngStyle]="c.mystyle"></span></div>
+                      <div class="process-info">
+                        <div class="process-funded"><span style="font-weight:bold">RM {{c.fund_amount}}</span> terkumpul setakat ini</div><br>
+                        <div class="process-funded"><span style="font-weight:bold">{{c.percent}}%</span> tepati sasaran</div><br>
+                        <div class="process-funded"><span style="font-weight:bold">{{c.days}}</span> hari lagi</div><br>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-md-4 col-sm-4 col-xs-4"><i class="fa fa-comment" aria-hidden="true"></i><span> {{c.comments.length}}</span></div>
+                      <div class="col-md-4 col-sm-4 col-xs-4"><i class="fa fa-eye" aria-hidden="true"></i><span> 123</span></div>
+                      <div class="col-md-4 col-sm-4 col-xs-4" style="text-align:right"><i class="fa fa-share" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- .section-content -->
+          <div class="bcenter">
+            <button class="btn-secondary">Button</button>
+          </div>
+        </div>
+      </div><!-- .popular -->
+      <section class="team section">
+        <div class="container">
+          <div class="statics-content">
+            <div class="row">
+              <div class="col-md-12 col-xs-12">
+                <div class="statics-item" style="background:none !important;color:white">
+                  <div class="statics-item-desc" style="text-align:center">
+                    <p style="margin-bottom:0px">Yayasan MyPrihatin (prihatin) ialah sebuah organisasi bukan berorientasikan keuntungan dan telah diluluskan penubuhannya di bawah akta ................</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="text-align:center">
+            <button class="btn-secondary">Button</button>
+          </div>
+        </div>
+      </section>
+      <section class="apps" style="background-image: url('../../assets/images/apps.jpg')">
+        <div class="container mb00">
+          <div class="row">
+            <div class="col-md-5">
+              <img src="../../assets/images/iphone.png">
+            </div>
+            <div class="col-md-7 mt150">
+              <div class="row bblack pd10">
+                <h1 class="fs40">Applikasi my dana</h1><br>
+                <p class="f20">Yayasan MyPrihatin memperkenalkan aplikasi mudah alih MyDana sebagai platform untuk orang ramai menyalurkan bantuan secara atas talian</p>	
+              </div>
+              <div class="row mt20" >
+                <div class="col-md-3 col-sm-6 col-xs-6" style="padding-left:0px;"> 
+                  <img src="../../assets/images/gplay.png"/>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6" style="padding-left:0px;"> 
+                  <img src="../../assets/images/appstore.png"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="subscribe">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">	
+              <h1 class="fs40 tcb">Get Fresh Update On Email</h1>
+              <p class="f20 tcb mt20">We'll never share your email address and you can opt out at any time, we promise</p>
+            </div>
+            <div class="col-md-6 mt111">
+              <div class="row">
+                <div class="search tac">
+                  <div class="search">
+                    <input placeholder="Your Email Address">
+                    <span class="fa fa-envelope-o"></span>
+                    <button class="btn-secondary bts">Subscribe</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer id="footer" class="bg-pink subscribe">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 col-sm-5 text-right text-left-xs wow fadeInUp" data-wow-delay=".1s">
+              <h2 class="fs50">
+                BERSAMA MEMBANTU MEREKA YANG MEMERLUKAN
+              </h2>
+            </div>
+            <div style="margin-top:30px" class="col-md-2 col-sm-2 col-xs-2 hidden-sm hidden-xs text-center wow fadeInUp" data-wow-delay=".1s">
+              <i style="color:black" class="icon display-block fa fa-heartbeat fa-5x">
+                
+              </i>
+            </div>
+            <div class="col-md-5 col-sm-5 wow fadeInUp" data-wow-delay=".1s">
+              <p class="lead">Sebarang pertanyaan boleh dikemukakan kepada Sekretariat kami melalui saluran dibawah:
+                <br>
+              </p>
+              <h4 class="mb8">
+                tel: 03 2858 7637
+              </h4>
+              <h4 class="mb8">
+                email: admin@myprihatin.org.my
+              </h4>
+              <br>
+              <h4 class="mb0">
+                <a style="color:white" href="http://fb.com/yayasanmyprihatin">
+                  <i class="fa fa-facebook-official">
+                  </i>
+                  YayasanMyPrihatin
+                </a>
+              </h4>
+              <h4 class="mb0">
+                <a style="color:white" href="http://instagram.com/yayasanmyprihatin">
+                  <i class="fa fa-instagram">
+                  </i>
+                  @yayasanmyprihatin
+                </a>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </footer><!-- site-footer -->
+    </div>
+  </main><!-- .site-main -->
+</div>
