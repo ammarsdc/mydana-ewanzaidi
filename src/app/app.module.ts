@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { CampaignComponent } from './campaign/campaign.component';
 
 import { MomentModule } from 'angular2-moment';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MomentModule } from 'angular2-moment';
     AppComponent,
     IndexComponent,
     LoginComponent,
-    CampaignComponent
+    CampaignComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

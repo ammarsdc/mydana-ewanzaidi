@@ -1650,6 +1650,7 @@ ul.menu-category li.active:after{
 .comment-area .comment-info .comment-content{
 	line-height: 1.6;
 	color: #555555;
+	min-height:100px;
 }
 .comments-list li{
 	list-style: none;

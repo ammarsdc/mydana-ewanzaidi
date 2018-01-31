@@ -13,8 +13,10 @@ export class LoginComponent implements OnInit {
 
   baseUrl = 'https://mydana.herokuapp.com/api/';
   token;
+  logged: Boolean;
 
-  constructor(private http:Http, private router: Router) { }
+  constructor(private http:Http, private router: Router) { 
+  }
 
   ngOnInit() {
   }
@@ -38,6 +40,10 @@ export class LoginComponent implements OnInit {
         reject(err);
       })
     })
+  }
+
+  signup(){
+    this.router.navigateByUrl('/signup');
   }
 
   

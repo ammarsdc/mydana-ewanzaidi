@@ -41,7 +41,7 @@
           </ul>
         </nav>
         <div class="login login-button">
-          <a href="https://demo.themegoals.com/html/ideabox/login.html" class="btn-primary">Login</a>
+          <a *ngIf="!logged" (click)="signup()" class="btn-primary">Sign Up</a>
         </div>
         <!-- .login -->
       </div>
