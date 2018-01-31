@@ -9,13 +9,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { LoginComponent } from './login/login.component';
+import { CampaignComponent } from './campaign/campaign.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    CampaignComponent
   ],
   imports: [
     BrowserModule,
