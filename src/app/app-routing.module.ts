@@ -5,13 +5,15 @@ import { LoginComponent } from './login/login.component';
 import { CampaignComponent } from './campaign/campaign.component';
 import { SignupComponent } from './signup/signup.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { ArticleComponent } from './article/article.component';
 
 const routes: Routes = [
   {path:'',component:IndexComponent, pathMatch: 'full'},
   {path:'login', component:LoginComponent},
   {path:'campaign/:id', component:CampaignComponent},
   {path:'signup', component:SignupComponent},
-  {path:'articles',component:ArticlesComponent}
+  {path:'articles',component:ArticlesComponent},
+  {path:'article/:id',component:ArticleComponent},
 ];
 
 @NgModule({

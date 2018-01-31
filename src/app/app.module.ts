@@ -14,6 +14,7 @@ import { CampaignComponent } from './campaign/campaign.component';
 import { MomentModule } from 'angular2-moment';
 import { SignupComponent } from './signup/signup.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { ArticleComponent } from './article/article.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ArticlesComponent } from './articles/articles.component';
     LoginComponent,
     CampaignComponent,
     SignupComponent,
-    ArticlesComponent
+    ArticlesComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
