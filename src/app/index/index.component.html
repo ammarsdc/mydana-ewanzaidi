@@ -22,7 +22,8 @@
           </ul>
         </nav>
         <div class="login login-button">
-          <a (click)="login()" class="btn-primary">Login</a>
+          <a *ngIf="!logged" (click)="login()" class="btn-primary">Login</a>
+          <a *ngIf="logged" (click)="logOut()" class="btn-primary">Logout</a>
         </div><!-- .login -->
       </div><!--. right-header -->
     </div><!-- .container -->
@@ -80,12 +81,12 @@
             <div class="row">
               <div *ngFor="let c of campaigns" class="col-md-4">
                 <div class="campaign-item wow fadeInUp" data-wow-delay=".1s">
-                  <a class="overlay" href="https://demo.themegoals.com/html/ideabox/campaign_detail.html">
+                  <a class="overlay" (click)="showCampaign(c.campaign_id)">
                     <img src="{{c.campaign_image}}" alt="">
-                    <span class="ion-ios-search-strong"></span>
+                    <span class="fa fa-search"></span>
                   </a>
                   <div class="campaign-box">
-                    <a href="https://demo.themegoals.com/html/ideabox/#" class="category">{{c.category}}</a>
+                    <a (click)="showCampaign(c.campaign_id)" class="category">{{c.category}}</a>
                     <h3><a href="https://demo.themegoals.com/html/ideabox/campaign_detail.html">{{c.campaign_name}}</a></h3>
                     <div class="campaign-description">{{c.description}}</div>
                     <div class="process">
@@ -108,7 +109,7 @@
             </div>
           </div><!-- .section-content -->
           <div class="bcenter">
-            <button class="btn-secondary">Button</button>
+            <button class="btn-secondary">Show More</button>
           </div>
         </div>
       </div><!-- .popular -->

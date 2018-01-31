@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from '@angular/http';
+import {Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {Router} from '@angular/router';
@@ -12,12 +12,33 @@ import {Router} from '@angular/router';
 export class IndexComponent implements OnInit {
 
   campaigns = [];
+  baseUrl = 'https://mydana.herokuapp.com/api/';
   percent;
   days;
   mystyle;
   data;
+  token;
+  logged : Boolean;
+  user;
 
-  constructor(private http:Http, private router:Router) { }
+  constructor(private http:Http, private router:Router) { 
+    this.token = window.localStorage.getItem('token');
+    if(this.token != null){
+      this.logged = true;
+      let header = new Headers();
+      header.append('Authorization', 'Bearer ' + this.token)
+      new Promise((resolve, reject) => {
+        this.http.get(this.baseUrl + 'users', {headers : header}).map(res => res.json()).subscribe(data => {
+          this.user = data.data;
+          resolve(data.data);
+        }, (err) => {
+          reject(err)
+        });
+      })
+    }else{
+      this.logged = false;
+    }
+  }
 
   ngOnInit(): void {
     this.http.get('https://mydana.herokuapp.com/api/campaigns').map(res => res.json()).subscribe(res => {
@@ -30,7 +51,7 @@ export class IndexComponent implements OnInit {
         calc = (elements.fund_amount / elements.total_amount) * 100;
         elements.percent = Math.round(calc);
         elements.days = Math.round(Math.abs((sec.getTime() - first.getTime()) / (oneDay)));
-        elements.mystyle = {'width' : `${elements.days}px`};
+        elements.mystyle = {'width' : `${elements.percent}%`};
         this.campaigns.push(elements)
       })
       console.log(this.campaigns);
@@ -39,6 +60,16 @@ export class IndexComponent implements OnInit {
 
   login(){
     this.router.navigateByUrl('/login');
+  }
+
+  logOut(){
+    this.user = null;
+    this.logged = false;
+    window.localStorage.removeItem('token');
+  }
+
+  showCampaign(id){
+    this.router.navigateByUrl('/campaign/'+id);
   }
 
 }

@@ -63,15 +63,17 @@
             <button type="submit" value="Send Messager" class="btn-secondary">Login With Google </button>
           </div>
           <h5>Atau</h5>
-          <div class="field">
-            <input type="email" value="" name="s" placeholder="E-mail Address">
-          </div>
-          <div class="field">
-            <input type="text" value="" name="s" placeholder="Password">
-          </div>
-          <div class="inline clearfix">
-            <button type="submit" value="Send Messager" class="btn-secondary">Login</button>
-          </div>
+          <form #loginForm="ngForm">
+            <div class="field">
+              <input type="email" name="email" placeholder="E-mail Address" ngModel>
+            </div>
+            <div class="field">
+              <input type="password" name="password" placeholder="Password" ngModel>
+            </div>
+            <div class="inline clearfix">
+              <button type="submit" class="btn-secondary" (click)="login(loginForm)">Login</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
