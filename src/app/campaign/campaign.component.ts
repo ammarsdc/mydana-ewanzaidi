@@ -23,6 +23,7 @@ export class CampaignComponent implements OnInit {
   rcent: Boolean = false;
 
   constructor(private http: Http, private router:Router, private route: ActivatedRoute) { 
+    this.user = [];
     this.campaign_id = this.route.snapshot.params['id'];
     this.token = window.localStorage.getItem('token');
     if(this.token != null){
@@ -104,6 +105,10 @@ export class CampaignComponent implements OnInit {
     this.http.post(this.baseUrl + 'campaign/' + cid + '/campaigncomment', {desc:newc,campaign_id:cid,user_id:uid}, {headers:header}).subscribe(res => {
       console.log(res.json())
     })
+  }
+
+  profile(id){
+    this.router.navigateByUrl('/profile/'+id)
   }
 
 }

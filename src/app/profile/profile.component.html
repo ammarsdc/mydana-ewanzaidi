@@ -22,8 +22,7 @@
           </ul>
         </nav>
         <div class="login login-button">
-          <a *ngIf="!logged" (click)="login()" class="btn-primary" style="cursor:pointer">Login</a>
-          <img *ngIf="logged" src="{{user.image}}" style="width:50px; height:50px; border-radius:50%; cursor:pointer" (click)="profile(user.user_id)">
+          <a (click)="logOut()" style="cursor:pointer" class="btn-primary">Log Out</a>
         </div><!-- .login -->
       </div><!--. right-header -->
     </div><!-- .container -->
@@ -31,49 +30,57 @@
   
 
   <main id="main" class="site-main">
-    <section class="top-site" [ngStyle]="{'background': 'url(' + article.header_image + ') no-repeat'}">
-      <div class="container">
-        <h1>{{article.short_desc}}</h1>
-        <p>{{article.article_date | date : 'dd MMM yyyy'}}</p>
-      </div>
+    <section class="top-site">
     </section><!-- .top-site -->
-    <section class="statics section st">
-      <div class="container ctr50">
-        <div class="statics-content">
-          <div class="row">
-            <div class="col-md-12 col-xs-12">
-              <div class="statics-item" style="background:none !important">
-                <h3 class="tl">{{article.article_title}}</h3>
-                <div class="statics-item-desc"><p class="tl">{{article.description}}</p></div>
-                <hr>
-                <div *ngFor="let a of article.comments; let i = index" class="row" style="margin-top:40px;">
-                  <div class="col-md-1 col-xs-12 col-sm-12 xs-ml50">
-                    <div class="numberCircle">{{i + 1}}</div>
-                  </div>
-                  <div class="col-md-11 col-xs-12 col-sm-12 ta2">
-                    <p class="bold tl xs-ta mt202">{{a.user}}</p>
-                    <p class="tl xs-ta mt202">{{a.comment}}</p>
-                  </div>
-                </div>
-                <hr>
-                <div class="row" style="margin-top:40px;margin-bottom:40px">
-                  <div class="col-md-4 col-xs-12 col-sm-12">
-                    <h3 class="tl">Far far away, behind the words mountain, far from the countries Vokalia and Consonantia</h3>
-                  </div>
-                  <div class="col-md-8 col-xs-12 col-sm-12 ta2">
-                    <p class="tl">Far far away, behind the words mountain, far from the countries Vokalia and Consonantia. Far far away, behind the words
-                      mountain, far from the countries Vokalia and Consonantia Far far away, behind the words mountain, far from the countries
-                      Vokalia and Consonantia.Far far away, behind the words mountain, far from the countries Vokalia and Consonantia
-                    </p>
-                  </div>
-                </div>
-                <img src="{{article.inline_image}}" width="100%">
+      <div class="video">
+        <div class="video-wrapper ple">
+          <span><img src="{{user.image}}" style="border-radius:50%"></span>
+        </div>
+      </div>
+      <div class="video">
+        <div class="video-wrapper">
+          <div>
+            <div class="container3">
+              <div class="col-md-12 col-xs-12 col-sm-12">
+                <h1>{{user.first_name}} {{user.last_name}}</h1>
+                <p>Yayasan prihatin mengucapkan ribuan terima kasih di atas sumbangan anda</p>
+                <h1 class="c2">RM 2,000</h1>
+                <h4>Jumlah derma</h4>
+                <button class="btn-secondary mr0">Cetak Penyata</button>
               </div>
             </div>
           </div>
         </div>
-    </div>
-    </section>
+      </div><!-- .video -->
+      <section class="team section" style="background:white">
+        <div class="container mw" id="updates">
+          <h2 class="title" style="color:black">Aktiviti</h2>
+          <ul>
+            <li>
+              <p class="date" style="font-weight:bold">30-06-2017</p>
+              <div class="desc">
+                <p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken.
+                  Landjaeger meatloaf pork belly spare ribs chuck.</p>
+              </div>
+            </li>
+            <li>
+              <p class="date" style="font-weight:bold">30-06-2017</p>
+              <div class="desc">
+                <p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken.
+                  Landjaeger meatloaf pork belly spare ribs chuck.</p>
+              </div>
+            </li>
+            <li>
+              <p class="date" style="font-weight:bold">30-06-2017</p>
+              <div class="desc">
+                <p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken.
+                  Landjaeger meatloaf pork belly spare ribs chuck.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- .team -->
   </main><!-- .site-main -->
 
   <footer id="footer" class="bg-pink subscribe">

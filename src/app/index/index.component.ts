@@ -19,6 +19,7 @@ export class IndexComponent implements OnInit {
   user;
 
   constructor(private http:Http, private router:Router) { 
+    this.user = [];
     this.token = window.localStorage.getItem('token');
     if(this.token != null){
       this.logged = true;
@@ -27,6 +28,7 @@ export class IndexComponent implements OnInit {
       new Promise((resolve, reject) => {
         this.http.get(this.baseUrl + 'users', {headers : header}).map(res => res.json()).subscribe(data => {
           this.user = data.data;
+          console.log(this.user);
           resolve(data.data);
         }, (err) => {
           reject(err)
@@ -63,6 +65,10 @@ export class IndexComponent implements OnInit {
     this.user = null;
     this.logged = false;
     window.localStorage.removeItem('token');
+  }
+
+  profile(id){
+    this.router.navigateByUrl('/profile/'+id)
   }
 
   showCampaign(id){

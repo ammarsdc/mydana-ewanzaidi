@@ -1734,8 +1734,8 @@ ul.menu-category li.active:after{
 ==========================================================*/
 .top-site{
 	height: 100vh;
-	background-size: cover;
-	background-position: center center;
+	background-size: cover !important;
+	background-position: center center !important;
 	position: relative;
 }
 .top-site:before{

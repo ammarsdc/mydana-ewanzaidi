@@ -22,8 +22,8 @@
           </ul>
         </nav>
         <div class="login login-button">
-          <a *ngIf="!logged" (click)="login()" class="btn-primary">Login</a>
-          <a *ngIf="logged" (click)="logOut()" class="btn-primary">Logout</a>
+          <a *ngIf="!logged" (click)="login()" class="btn-primary" style="cursor:pointer">Login</a>
+          <img *ngIf="logged" src="{{user.image}}" style="width:50px; height:50px; border-radius:50%; cursor:pointer" (click)="profile(user.user_id)">
         </div><!-- .login -->
       </div><!--. right-header -->
     </div><!-- .container -->

@@ -6,6 +6,7 @@ import { CampaignComponent } from './campaign/campaign.component';
 import { SignupComponent } from './signup/signup.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path:'',component:IndexComponent, pathMatch: 'full'},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'articles',component:ArticlesComponent},
   {path:'article/:id',component:ArticleComponent},
+  {path:'profile/:id', component:ProfileComponent}
 ];
 
 @NgModule({

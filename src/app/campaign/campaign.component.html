@@ -3,32 +3,55 @@
 		<header id="header" class="site-header" style="background-color:#292929">
 			<div class="container" style="width: 90%;">
 				<div class="site-brand">
-					<a href="#"><img src="../../assets/images/logo-light.png" alt=""></a>
-				</div><!-- .site-brand -->
-				<div class="right-header">					
+					<a href="#">
+						<img src="../../assets/images/logo-light.png" alt="">
+					</a>
+				</div>
+				<!-- .site-brand -->
+				<div class="right-header">
 					<nav class="main-menu">
-						<button class="c-hamburger c-hamburger--htx"><span></span></button>
+						<button class="c-hamburger c-hamburger--htx">
+							<span></span>
+						</button>
 						<ul>
 							<li>
-								<a href="#">PROGRAM<i class="fa fa-caret-down" aria-hidden="true"></i></a>
+								<a href="#">PROGRAM
+									<i class="fa fa-caret-down" aria-hidden="true"></i>
+								</a>
 								<ul class="sub-menu">
-									<li><a href="#">KESIHATAN</a></li>
-									<li><a href="#">KASIH</a></li>
-									<li><a href="#">AMAL</a></li>
-									<li><a href="#">KOMUNITI</a></li>
-									<li><a href="#">ILMU</a></li>
+									<li>
+										<a href="#">KESIHATAN</a>
+									</li>
+									<li>
+										<a href="#">KASIH</a>
+									</li>
+									<li>
+										<a href="#">AMAL</a>
+									</li>
+									<li>
+										<a href="#">KOMUNITI</a>
+									</li>
+									<li>
+										<a href="#">ILMU</a>
+									</li>
 								</ul>
 							</li>
-							<li><a href="#">MAKLUMAT</a></li>
+							<li>
+								<a href="#">MAKLUMAT</a>
+							</li>
 						</ul>
 					</nav>
 					<div class="login login-button">
-						<a *ngIf="!logged" (click)="login()" class="btn-primary">Login</a>
-            <a *ngIf="logged" (click)="logOut()" class="btn-primary">Logout</a>
-					</div><!-- .login -->
-				</div><!--. right-header -->
-			</div><!-- .container -->
-		</header><!-- .site-header -->
+						<a *ngIf="!logged" (click)="login()" class="btn-primary" style="cursor:pointer">Login</a>
+         				 <img *ngIf="logged" src="{{user.image}}" style="width:50px; height:50px; border-radius:50%; cursor:pointer" (click)="profile(user.user_id)">
+					</div>
+					<!-- .login -->
+				</div>
+				<!--. right-header -->
+			</div>
+			<!-- .container -->
+		</header>
+		<!-- .site-header -->
 
 		<main id="main" class="site-main sm2">
 			<div class="campaign-content">
@@ -50,10 +73,10 @@
 										<div class="owl-pagination">
 											<div class="owl-page">
 												<img src="../../assets/images/campaign-recent-01.jpg">
-                      </div>
-                      <div class="owl-page">
+											</div>
+											<div class="owl-page">
 												<img src="../../assets/images/campaign-recent-02.jpg">
-                      </div>
+											</div>
 										</div>
 										<div class="owl-buttons">
 											<div class="owl-prev">
@@ -69,13 +92,23 @@
 							<div class="campaign-box">
 								<h5>{{campaign.category}}</h5>
 								<h3>{{campaign.campaign_name}}</h3>
-								<div class="campaign-description"><p>{{campaign.short_desc}}</p></div>
+								<div class="campaign-description">
+									<p>{{campaign.short_desc}}</p>
+								</div>
 								<div class="process">
-									<div class="raised"><span [ngStyle]="campaign.mystyle"></span></div>
+									<div class="raised">
+										<span [ngStyle]="campaign.mystyle"></span>
+									</div>
 									<div class="process-info">
-										<div class="process-funded"><span>RM {{campaign.fund_amount}}</span> terkumpul setakat ini</div><br>
-										<div class="process-funded"><span>{{campaign.percent}}%</span> tepati sasaran</div><br>
-										<div class="process-funded"><span>{{campaign.days}}</span> hari lagi</div><br>
+										<div class="process-funded">
+											<span>RM {{campaign.fund_amount}}</span> terkumpul setakat ini</div>
+										<br>
+										<div class="process-funded">
+											<span>{{campaign.percent}}%</span> tepati sasaran</div>
+										<br>
+										<div class="process-funded">
+											<span>{{campaign.days}}</span> hari lagi</div>
+										<br>
 									</div>
 								</div>
 								<div class="button">
@@ -87,16 +120,23 @@
 						</div>
 					</div>
 				</div>
-			</div><!-- .campaign-content -->
+			</div>
+			<!-- .campaign-content -->
 			<div class="campaign-history">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
 							<div class="campaign-tabs">
 								<ul class="tabs-controls">
-									<li [ngClass]="{active: oview}" data-tab="campaign"><a (click)="overview()">Overview</a></li>
-									<li data-tab="comment" [ngClass]="{active: cment}"><a (click)="comment()">Komen</a></li>
-									<li data-tab="updates" [ngClass]="{active: rcent}"><a (click)="terkini()">Terkini</a></li>
+									<li [ngClass]="{active: oview}" data-tab="campaign">
+										<a (click)="overview()">Overview</a>
+									</li>
+									<li data-tab="comment" [ngClass]="{active: cment}">
+										<a (click)="comment()">Komen</a>
+									</li>
+									<li data-tab="updates" [ngClass]="{active: rcent}">
+										<a (click)="terkini()">Terkini</a>
+									</li>
 								</ul>
 								<div class="campaign-content">
 									<div *ngIf="oview" id="campaign" class="tabs" [ngClass]="{active: oview}">
@@ -106,22 +146,29 @@
 										<ul *ngFor="let c of campaign.campaign_news">
 											<li>
 												<p class="date">{{c.created_at.date|date:'dd MMM yyyy'}}</p>
-                        <div class="desc"><p>{{c.desc}}</p></div>
-                        <br>
+												<div class="desc">
+													<p>{{c.desc}}</p>
+												</div>
+												<br>
 											</li>
 										</ul>
 									</div>
 									<div *ngIf="cment" id="comment" class="tabs comment-area" [ngClass]="{active: cment}">
 										<ol class="comments-list">
-											<li class="comment clearfix"> 
-												<div *ngFor="let c of campaign.campaign_comments"class="comment-body">
-													<div class="comment-avatar"><img src="{{c.user.image}}" alt="" style="border-radius:50%;height:70px; width:70px"></div>
+											<li class="comment clearfix">
+												<div *ngFor="let c of campaign.campaign_comments" class="comment-body">
+													<div class="comment-avatar">
+														<img src="{{c.user.image}}" alt="" style="border-radius:50%;height:70px; width:70px">
+													</div>
 													<div class="comment-info">
 														<header class="comment-meta"></header>
-														<cite class="comment-author">{{c.user.name}} </cite><span class="comment-date"> {{c.RelativeDate}}</span>
-														<div class="comment-content"><p>{{c.desc}}</p></div>
-                          </div>
-                          <br>
+														<cite class="comment-author">{{c.user.name}} </cite>
+														<span class="comment-date"> {{c.RelativeDate}}</span>
+														<div class="comment-content">
+															<p>{{c.desc}}</p>
+														</div>
+													</div>
+													<br>
 												</div>
 											</li>
 										</ol>
@@ -129,19 +176,22 @@
 											<h3 id="reply-title" class="comment-reply-title">Leave A Comment?</h3>
 											<form #commentForm="ngForm" id="commentForm">
 												<div class="field-textarea">
-								  					<textarea rows="8" placeholder="Your Comment" name="newcomment" ngModel></textarea>
-								  				</div>
-											  	<button type="submit" (click)="newComment(commentForm)" class="btn-primary">Post Comment</button>
+													<textarea rows="8" placeholder="Your Comment" name="newcomment" ngModel></textarea>
+												</div>
+												<button type="submit" (click)="newComment(commentForm)" class="btn-primary">Post Comment</button>
 											</form>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div><!-- .main-content -->
+						</div>
+						<!-- .main-content -->
 					</div>
 				</div>
-			</div><!-- .campaign-history -->
-		</main><!-- .site-main -->
+			</div>
+			<!-- .campaign-history -->
+		</main>
+		<!-- .site-main -->
 
 		<footer id="footer" class="bg-pink subscribe">
 			<div class="container">
@@ -153,7 +203,7 @@
 					</div>
 					<div style="margin-top:30px" class="col-md-2 col-sm-2 col-xs-2 hidden-sm hidden-xs text-center wow fadeInUp" data-wow-delay=".1s">
 						<i style="color:black" class="icon display-block fa fa-heartbeat fa-5x">
-							
+
 						</i>
 					</div>
 					<div class="col-md-5 col-sm-5 wow fadeInUp" data-wow-delay=".1s">
@@ -184,8 +234,10 @@
 					</div>
 				</div>
 			</div>
-		</footer><!-- site-footer -->
-	</div><!-- #wrapper -->
-	<!-- jQuery -->  
+		</footer>
+		<!-- site-footer -->
+	</div>
+	<!-- #wrapper -->
+	<!-- jQuery -->
 
 </div>

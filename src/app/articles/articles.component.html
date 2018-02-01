@@ -22,7 +22,8 @@
 						</ul>
 					</nav>
 					<div class="login login-button">
-						<a href="https://demo.themegoals.com/html/ideabox/login.html" class="btn-primary">Login</a>
+						<a *ngIf="!logged" (click)="login()" class="btn-primary" style="cursor:pointer">Login</a>
+          <img *ngIf="logged" src="{{user.image}}" style="width:50px; height:50px; border-radius:50%; cursor:pointer" (click)="profile(user.user_id)">
 					</div><!-- .login -->
 				</div><!--. right-header -->
 			</div><!-- .container -->
@@ -113,14 +114,14 @@
 											<p style="margin-bottom:22px;">{{a.article_date | date: 'dd MMMM yyyy'}}</p>
 											<p style="margin-bottom:22px;font-size:30px">{{a.article_title}}</p>
 											<p style="margin-bottom:42px;">{{a.description}}</p>
-											<a (click)="readMore(a.article_id)">Read More ></a>
+											<a (click)="readMore(a.article_id)" style="cursor:pointer"><strong>Read More ></strong></a>
 										</div>
 									</div>
 								</div>
 							</div>
 							<div class="row">
 								<div class="button" style="text-align: center">
-									<button class="btn-primary">Button</button>
+									<button class="btn-primary">Show More</button>
 								</div>
 							</div>
 						</div>
