@@ -29,6 +29,7 @@ export class CampaignComponent implements OnInit {
     this.campaign_id = this.route.snapshot.params['id'];
     this.token = window.localStorage.getItem('token');
     if(this.token != null){
+      this.can = true;
       this.logged = true;
       let header = new Headers();
       header.append('Authorization', 'Bearer ' + this.token)
