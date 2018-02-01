@@ -114,6 +114,10 @@ export class CampaignComponent implements OnInit {
     this.router.navigateByUrl('/profile/'+id)
   }
 
+  homepage(){
+    this.router.navigateByUrl('/')
+  }
+
   donate(){
     if(window.localStorage.getItem('token') != null){
       this.router.navigateByUrl('/donate/'+this.campaign_id);

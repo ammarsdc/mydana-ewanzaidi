@@ -60,4 +60,8 @@ export class ArticleComponent implements OnInit {
     this.router.navigateByUrl('/profile/'+id)
   }
 
+  homepage(){
+    this.router.navigateByUrl('/')
+  }
+
 }

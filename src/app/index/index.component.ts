@@ -75,4 +75,8 @@ export class IndexComponent implements OnInit {
     this.router.navigateByUrl('/campaign/'+id);
   }
 
+  homepage(){
+    this.router.navigateByUrl('/')
+  }
+
 }

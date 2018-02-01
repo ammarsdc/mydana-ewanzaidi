@@ -28,4 +28,8 @@ export class ProfileComponent implements OnInit {
     this.route.navigateByUrl('/');
   }
 
+  homepage(){
+    this.route.navigateByUrl('/')
+  }
+
 }
