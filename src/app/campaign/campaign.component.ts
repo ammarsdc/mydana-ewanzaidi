@@ -21,6 +21,8 @@ export class CampaignComponent implements OnInit {
   oview : Boolean = true;
   cment: Boolean = false;
   rcent: Boolean = false;
+  success : Boolean = false;
+  can : Boolean = false;
 
   constructor(private http: Http, private router:Router, private route: ActivatedRoute) { 
     this.user = [];
@@ -109,6 +111,18 @@ export class CampaignComponent implements OnInit {
 
   profile(id){
     this.router.navigateByUrl('/profile/'+id)
+  }
+
+  donate(){
+    if(window.localStorage.getItem('token') != null){
+      this.router.navigateByUrl('/donate/'+this.campaign_id);
+    }else{
+      this.success = !this.success;
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      setTimeout(function () {
+        this.success = false;
+      }.bind(this), 5000);
+    }
   }
 
 }

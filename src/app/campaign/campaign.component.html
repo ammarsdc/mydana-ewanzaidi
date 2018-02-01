@@ -56,6 +56,9 @@
 		<main id="main" class="site-main sm2">
 			<div class="campaign-content">
 				<div class="container">
+					<div *ngIf="success" class="alert alert-danger">
+						<strong>Please login to make a donation</strong> 
+					</div>
 					<div class="campaign">
 						<div class="campaign-item clearfix">
 							<div class="campaign-image">
@@ -112,7 +115,7 @@
 									</div>
 								</div>
 								<div class="button">
-									<button class="btn-primary" type="submit">Derma</button>
+									<button class="btn-primary" type="submit" (click)="donate()">Derma</button>
 									<button class="btn-secondary" type="submit">Sebar</button>
 									<!-- <a href="https://demo.themegoals.com/html/ideabox/campaign_detail.html?s=1#" class="btn-secondary"><i class="fa fa-heart" aria-hidden="true"></i>Remind me</a> -->
 								</div>
@@ -176,9 +179,10 @@
 											<h3 id="reply-title" class="comment-reply-title">Leave A Comment?</h3>
 											<form #commentForm="ngForm" id="commentForm">
 												<div class="field-textarea">
-													<textarea rows="8" placeholder="Your Comment" name="newcomment" ngModel></textarea>
+													<textarea *ngIf="can" rows="8" placeholder="Your Comment" name="newcomment" ngModel></textarea>
+													<textarea *ngIf="!can" rows="8" placeholder="Please Login before you can comment" name="newcomment" ngModel></textarea>
 												</div>
-												<button type="submit" (click)="newComment(commentForm)" class="btn-primary">Post Comment</button>
+												<button [disabled]="!can" type="submit" (click)="newComment(commentForm)" class="btn-primary">Post Comment</button>
 											</form>
 										</div>
 									</div>

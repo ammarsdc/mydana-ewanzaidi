@@ -7,6 +7,8 @@ import { SignupComponent } from './signup/signup.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DonateComponent } from './donate/donate.component';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {path:'',component:IndexComponent, pathMatch: 'full'},
@@ -15,7 +17,8 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent},
   {path:'articles',component:ArticlesComponent},
   {path:'article/:id',component:ArticleComponent},
-  {path:'profile/:id', component:ProfileComponent}
+  {path:'profile/:id', component:ProfileComponent},
+  {path:'donate/:id', component:DonateComponent, canActivate: [AuthService]}
 ];
 
 @NgModule({

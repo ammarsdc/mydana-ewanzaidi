@@ -16,6 +16,8 @@ import { SignupComponent } from './signup/signup.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
 import { ProfileComponent } from './profile/profile.component';
+import { DonateComponent } from './donate/donate.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     ArticlesComponent,
     ArticleComponent,
-    ProfileComponent
+    ProfileComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { ProfileComponent } from './profile/profile.component';
     ReactiveFormsModule,
     MomentModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
