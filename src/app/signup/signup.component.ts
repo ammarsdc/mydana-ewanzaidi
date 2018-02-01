@@ -63,4 +63,8 @@ export class SignupComponent implements OnInit {
 
   }
 
+  homepage(){
+    this.router.navigateByUrl('/')
+  }
+
 }
