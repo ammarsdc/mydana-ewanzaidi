@@ -22,7 +22,8 @@
           </ul>
         </nav>
         <div class="login login-button">
-          <a href="https://demo.themegoals.com/html/ideabox/login.html" class="btn-primary">Login</a>
+            <a *ngIf="!logged" (click)="login()" class="btn-primary" style="cursor:pointer">Login</a>
+            <img *ngIf="logged" src="{{user.image}}" style="width:50px; height:50px; border-radius:50%; cursor:pointer" (click)="profile(user.user_id)">
         </div><!-- .login -->
       </div><!--. right-header -->
     </div><!-- .container -->
@@ -33,6 +34,8 @@
     <div class="container" style="padding-left:30px;padding-right:30px">
       <div class="row" style="margin-bottom:80px">
         <div class="main-content">
+          <div class="alert alert-success" *ngIf="success">Terima kasih kerana menderma</div>
+          <div class="alert alert-danger" *ngIf="login">Sila daftar masuk sebelum menderma, terima kasih</div>
           <div class="col-md-6 col-xs-12 col-sm-12 dualcolr">
             <div class="derma">
               <h2>Ahli MyPrihatin?</h2>
@@ -43,7 +46,7 @@
                 </div>
                 <div class="col-md-11 col-sm-10 col-xs-10" style="margin-top:10px; padding-left:30px">
                   <h3>
-                    <a href="#">Daftar Masuk</a>
+                    <a style="cursor:pointer" (click)="loginpage()">Daftar Masuk</a>
                   </h3>
                 </div>
               </div>
@@ -60,14 +63,14 @@
                   <h4>Tetapkan nilai</h4>
                 </div>
                 <div class="col-md-6 col-sm-4 col-xs-4 ta">
-                  <p class="tar">$98.92</p>
+                  <p class="tar">RM 5000</p>
                 </div>
               </div>
               <div id="slidecontainer">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input type="range" min="1" max="5000" step="1" class="slider" id="myRange">
               </div>
               <p class="p">RM10 <span class="p2">RM100 </span><span class="p2">RM500 </span><span class="p2">RM1000 </span><span class="p2">RM5000</span></p>
-              <button class="btn-secondary">Button</button>
+              <button class="btn-secondary" (click)="derma()">Derma</button>
             </div>
           </div>
         </div>

@@ -119,15 +119,7 @@ export class CampaignComponent implements OnInit {
   }
 
   donate(){
-    if(window.localStorage.getItem('token') != null){
-      this.router.navigateByUrl('/donate/'+this.campaign_id);
-    }else{
-      this.success = !this.success;
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-      setTimeout(function () {
-        this.success = false;
-      }.bind(this), 5000);
-    }
+    this.router.navigateByUrl('/donate/'+this.campaign_id);
   }
 
 }

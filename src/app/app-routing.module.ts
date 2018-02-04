@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:'articles',component:ArticlesComponent},
   {path:'article/:id',component:ArticleComponent},
   {path:'profile/:id', component:ProfileComponent},
-  {path:'donate/:id', component:DonateComponent, canActivate: [AuthService]}
+  {path:'donate/:id', component:DonateComponent}
 ];
 
 @NgModule({

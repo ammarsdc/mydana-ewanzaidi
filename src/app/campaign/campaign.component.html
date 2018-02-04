@@ -129,13 +129,13 @@
 						<div class="col-md-8">
 							<div class="campaign-tabs">
 								<ul class="tabs-controls">
-									<li [ngClass]="{active: oview}" data-tab="campaign">
+									<li [ngClass]="{active: oview}" style="cursor:pointer" data-tab="campaign">
 										<a (click)="overview()">Overview</a>
 									</li>
-									<li data-tab="comment" [ngClass]="{active: cment}">
+									<li data-tab="comment" style="cursor:pointer" [ngClass]="{active: cment}">
 										<a (click)="comment()">Komen</a>
 									</li>
-									<li data-tab="updates" [ngClass]="{active: rcent}">
+									<li data-tab="updates" style="cursor:pointer" [ngClass]="{active: rcent}">
 										<a (click)="terkini()">Terkini</a>
 									</li>
 								</ul>
