@@ -109,7 +109,7 @@
             </div>
           </div><!-- .section-content -->
           <div class="bcenter">
-            <button class="btn-secondary">Show More</button>
+            <button *ngIf="campaigns.length > 3" class="btn-secondary">Show More</button>
           </div>
         </div>
       </div><!-- .popular -->
@@ -126,9 +126,9 @@
               </div>
             </div>
           </div>
-          <div style="text-align:center">
+          <!-- <div style="text-align:center">
             <button class="btn-secondary">Button</button>
-          </div>
+          </div> -->
         </div>
       </section>
       <section class="apps" style="background-image: url('../../assets/images/apps.jpg')">

@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class IndexComponent implements OnInit {
 
   campaigns = [];
+  banners = [];
   baseUrl = 'https://mydana.herokuapp.com/api/';
   data;
   token;
@@ -54,6 +55,11 @@ export class IndexComponent implements OnInit {
         this.campaigns.push(elements)
       })
       console.log(this.campaigns);
+    })
+
+    this.http.get('https://mydana.herokuapp.com/api/banners').map(res => res.json()).subscribe(items => {
+      this.banners = items.data;
+      console.log(this.banners)
     })
   }
 
