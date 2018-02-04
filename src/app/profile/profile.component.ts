@@ -10,15 +10,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
 
   user;
+  amount = 0;
   baseUrl = 'https://mydana.herokuapp.com/api/';
 
   constructor(private http:Http, private router:ActivatedRoute, private route: Router) { }
 
   ngOnInit() {
     this.user = [];
+    let user_fund = [];
     let id = this.router.snapshot.params['id'];
     this.http.get(this.baseUrl + 'user/' +id ).map(res => res.json()).subscribe(items => {
       this.user = items.data;
+      user_fund = items.data.fund;
+      user_fund.forEach(f => {
+        this.amount = this.amount + f.amount;
+      })
       console.log(this.user);
     })
   }

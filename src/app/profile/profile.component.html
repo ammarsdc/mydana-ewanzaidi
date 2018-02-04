@@ -44,7 +44,7 @@
               <div class="col-md-12 col-xs-12 col-sm-12">
                 <h1>{{user.first_name}} {{user.last_name}}</h1>
                 <p>Yayasan prihatin mengucapkan ribuan terima kasih di atas sumbangan anda</p>
-                <h1 class="c2">RM 2,000</h1>
+                <h1 class="c2">RM {{amount}}</h1>
                 <h4>Jumlah derma</h4>
                 <button class="btn-secondary mr0">Cetak Penyata</button>
               </div>
@@ -56,25 +56,12 @@
         <div class="container mw" id="updates">
           <h2 class="title" style="color:black">Aktiviti</h2>
           <ul>
-            <li>
-              <p class="date" style="font-weight:bold">30-06-2017</p>
+            <li *ngFor="let f of user.fund">
+              <p class="date" style="font-weight:bold">{{f.donation_date.date | date : 'dd MMM yyyy'}}</p>
               <div class="desc">
-                <p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken.
-                  Landjaeger meatloaf pork belly spare ribs chuck.</p>
-              </div>
-            </li>
-            <li>
-              <p class="date" style="font-weight:bold">30-06-2017</p>
-              <div class="desc">
-                <p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken.
-                  Landjaeger meatloaf pork belly spare ribs chuck.</p>
-              </div>
-            </li>
-            <li>
-              <p class="date" style="font-weight:bold">30-06-2017</p>
-              <div class="desc">
-                <p>Bacon spare ribs rump chuck turkey, ham hock capicola. Strip steak tongue kielbasa, boudin hamburger t-bone capicola turducken.
-                  Landjaeger meatloaf pork belly spare ribs chuck.</p>
+                <p>Category: {{f.category}}</p>
+                <p>Campaign name: {{f.campaign_name}}</p>
+                <p>Fund Amount : {{f.amount}}</p>
               </div>
             </li>
           </ul>

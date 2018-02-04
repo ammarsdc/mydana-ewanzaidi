@@ -54,6 +54,9 @@
   <main id="main" class="site-main sm2">
     <div class="container">
       <div class="main-content">
+        <div *ngIf="error" class="field alert alert-danger">
+          Invalid username or password, please try again
+        </div>
         <div class="form-login" style="text-align:center">
           <h2>Daftar Masuk</h2>
           <div class="inline clearfix">

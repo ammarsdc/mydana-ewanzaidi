@@ -56,10 +56,6 @@ export class SignupComponent implements OnInit {
 
     registerForm.reset();
     this.success = !this.success;
-    document.body.scrollTop = document.documentElement.scrollTop = 0;
-    setTimeout(function () {
-      this.success = false;
-    }.bind(this), 5000);
 
   }
 
