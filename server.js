@@ -1,12 +1,9 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var mongodb = require("mongodb");
-var ObjectID = mongodb.ObjectID;
+const express = require('express');
+const app = express();
+//const path = require('path');
 
-var CONTACTS_COLLECTION = "contacts";
+app.use(express.static(__dirname + '/dist'));
 
-var app = express();
-app.use(bodyParser.json());
+app.listen(process.env.PORT || 8080);
 
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
+console.log('Console Listening');
